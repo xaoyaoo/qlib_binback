@@ -1,0 +1,22 @@
+name: Download qlib dataset
+
+on:
+  schedule:
+    - cron: '0 8 * * 1-5'  # 每周一至周五上午8点运行
+
+jobs:
+  download:
+    name: Download qlib dataset
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      
+      - name: Download qlib dataset
+        run: bash download_qlib.sh
