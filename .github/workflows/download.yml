@@ -2,7 +2,7 @@ name: Download qlib dataset
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'  # 每周一至周五上午8点运行
+    - cron: '52 16 * * 1-5'  # 每周一至周五上午8点运行
 
 jobs:
   download:
@@ -35,5 +35,5 @@ jobs:
         run: exit 1
       - name: Push changes
         uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
