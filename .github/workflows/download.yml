@@ -2,7 +2,7 @@ name: Download qlib dataset
 
 on:
   schedule:
-    - cron: '0 17 * * *'  # 每周一至周五上午8点运行
+    - cron: '*/5 * * * *'  # 每周一至周五上午8点运行
 
 jobs:
   download:
